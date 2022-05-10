@@ -11,7 +11,6 @@ async function getBeers() {
     catch (error) {
       console.log(error);
     }
-
   } 
 
   // ===== Récupération de la fonction dans la variable beers.
@@ -36,42 +35,43 @@ function beersShow() {
           // ===== Création supposée des cards se générant automatiquement selon le Array beers ex: 10 bières ou 25 bières comme cet exercice.
           // ===== AppendChild permet de lier la div ou tag parent à la div ou tag enfant.
         let colDiv = document.createElement("div");
-        colDiv.classList = "col-2";
+        colDiv.className = "col-2";
           cardHtml.appendChild(colDiv);
 
-        let cardDiv = document.createElement("div");
-        cardDiv.classList = "card";
-        cardDiv.setAttribute = ("id", "getBeers");
-          colDiv.appendChild(cardDiv);
+          let cardDiv = document.createElement("div");
+          cardDiv.className = "card";
+          cardDiv.setAttribute = ("id", "getBeers");
+            colDiv.appendChild(cardDiv);
 
-        let img = document.createElement("img");
-        img.classList = "card-img-top";
-        img.setAttribute = ("id", "image")
-        img.src = beer.image_url;
-          cardDiv.appendChild(img);
+            let img = document.createElement("img");
+            img.className = "card-img-top";
+            img.setAttribute = ("id", "image")
+            img.src = beer.image_url;
+              cardDiv.appendChild(img);
 
-        let cardBodyDiv = document.createElement("div");
-        cardBodyDiv.classList = "card-body";
-          img.appendChild(cardBodyDiv);
+            let cardBodyDiv = document.createElement("div");
+            cardBodyDiv.className = "card-body";
+              cardDiv.appendChild(cardBodyDiv);
 
-        let cardTitle = document.createElement("h5");
-        cardTitle.classList = "card-title";
-        cardTitle.setAttribute = ("id", "nom");
-        cardTitle.innerHTML = beer.name;
+              let cardTitle = document.createElement("h5");
+              cardTitle.className = "card-title";
+              cardTitle.setAttribute = ("id", "nom");
+              cardTitle.textContent = beer.name;
+                cardBodyDiv.appendChild(cardTitle);
 
-        let sloganDiv = document.createElement("p");
-        sloganDiv.classList = "card-text";
-        sloganDiv.setAttribute = ("id", "slogan");
-        sloganDiv.innerHTML = beer.tagline;
+              let sloganDiv = document.createElement("p");
+              sloganDiv.className = "card-text";
+              sloganDiv.setAttribute = ("id", "slogan");
+              sloganDiv.innerHTML = beer.tagline;
+                cardBodyDiv.appendChild(sloganDiv);
 
-        let modalDiv = document.createElement("a");
-        modalDiv.classList = "btn btn-primary";
-        modalDiv.setAttribute = ("id", "details");
-          cardBodyDiv.appendChild(modalDiv);
-          cardBodyDiv.appendChild(sloganDiv);
-          cardBodyDiv.appendChild(cardTitle);  
-      
-        // return cardHtml;
+              let modalDiv = document.createElement("button");
+              modalDiv.className = "btn btn-primary";
+              modalDiv.setAttribute = ("id", "details");
+                cardBodyDiv.appendChild(modalDiv);  
+            
+        
+          
 
   }  
 }
