@@ -42,13 +42,12 @@ function beersShow() {
     cardHtml.appendChild(colDiv);
 
     let cardDiv = document.createElement("div");
-    cardDiv.className = "card";
+    cardDiv.className = "card p-2 m-3";
     cardDiv.setAttribute("id", "getBeers");
     colDiv.appendChild(cardDiv);
 
     let img = document.createElement("img");
-    img.className = "card-img-top w-50 img-fluid";
-    img.style = "height: 20rem"; 
+    img.className = "card-img-top w-50 img-fluid"; 
     img.setAttribute("id", "image")
     img.src = beer.image_url;
     cardDiv.appendChild(img);
